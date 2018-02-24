@@ -6,6 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import static org.junit.Assert.*;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,7 +16,7 @@ public class UploadFileTest {
 
     @Test
     public void setup() {
-        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver\\win32\\2.35\\chromedriver.exe");
+        System.setProperty("webdriver.chrome.driver", "C:\\Users\\ПК\\IdeaProjects\\AutomatingTestingJavaMaven\\src\\recourses\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
@@ -23,7 +24,7 @@ public class UploadFileTest {
         System.out.println("Открылся сайт почты mail.ru");
     }
     @Test
-            public void userLogin() {
+            public void userLogin() throws InterruptedException {
 
 
                 WebElement loginField = driver.findElement(By.xpath(".//*[@id=\"app\"]//form/div[1]//input"));
@@ -43,13 +44,19 @@ public class UploadFileTest {
                 System.out.println("Пользователь начал писать новое письмо");
 
                 //нужно выибрать селектор с тегом input
-                driver.findElement(By.className("Compose-fileInput-dl")).sendKeys("C:\\chromedriver\\win32\\2.35\\chromedriver.exe");
+                driver.findElement(By.className("Compose-fileInput-dl")).sendKeys("C:\\Users\\ПК\\IdeaProjects\\AutomatingTestingJavaMaven\\src\\recourses\\chromedriver.exe");
+
+
+                WebElement check = driver.findElement(By.className("Uploads-name-2k"));
                 System.out.println("Пользователь загружает файл");
 
-            }
+
+
+
+    }
             @AfterClass
             public static void tearDown() {
-                driver.quit();
+                //driver.quit();
                 System.out.println("Тест завершён");
     }
 }
