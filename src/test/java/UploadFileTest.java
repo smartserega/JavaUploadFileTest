@@ -42,16 +42,14 @@ public class UploadFileTest {
                 writeButton.click();
                 System.out.println("Пользователь начал писать новое письмо");
 
-//                WebElement uploadFile = driver.findElement(By.className("Compose-icon-m2"));
-//                uploadFile.click();
-                driver.findElement(By.className("Compose-icon-m2")).sendKeys("C:\\chromedriver\\win32\\2.35\\chromedriver.exe");
+                //нужно выибрать селектор с тегом input
+                driver.findElement(By.className("Compose-fileInput-dl")).sendKeys("C:\\chromedriver\\win32\\2.35\\chromedriver.exe");
                 System.out.println("Пользователь загружает файл");
-
 
             }
             @AfterClass
             public static void tearDown() {
-               // driver.quit();
+                driver.quit();
                 System.out.println("Тест завершён");
     }
 }
