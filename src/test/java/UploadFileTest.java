@@ -27,15 +27,15 @@ public class UploadFileTest {
             public void userLogin() throws InterruptedException {
 
 
-                WebElement loginField = driver.findElement(By.xpath(".//*[@id=\"app\"]//form/div[1]//input"));
+                WebElement loginField = driver.findElement(By.name("login"));
                 loginField.sendKeys("smarseregatest");
                 System.out.println("Пользователь ввёл логин");
 
-                WebElement passwordField = driver.findElement(By.xpath(".//*[@id=\"app\"]//form/div[2]//input"));
+                WebElement passwordField = driver.findElement(By.name("password"));
                 passwordField.sendKeys("12345678");
                 System.out.println("Пользователь ввёл пароль");
 
-                WebElement loginButton = driver.findElement(By.xpath(".//*[@id=\"app\"]//button"));
+                WebElement loginButton = driver.findElement(By.cssSelector(".form-button.form-button_submit"));
                 loginButton.click();
                 System.out.println("Пользователь вошёл в почту");
 
@@ -49,9 +49,6 @@ public class UploadFileTest {
 
                 WebElement check = driver.findElement(By.className("Uploads-name-2k"));
                 System.out.println("Пользователь загружает файл");
-
-
-
 
     }
             @AfterClass
