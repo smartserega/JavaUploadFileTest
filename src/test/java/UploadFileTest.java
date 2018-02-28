@@ -41,8 +41,6 @@ public class UploadFileTest {
         //нужно выибрать селектор с тегом input
         driver.findElement(By.className("Compose-fileInput-dl")).sendKeys("C:\\Users\\ПК\\IdeaProjects\\AutomatingTestingJavaMaven\\src\\recourses\\chromedriver.exe");
 
-
-        WebElement check = driver.findElement(By.className("Uploads-name-2k"));
         System.out.println("Пользователь загружает файл");
     }
     @AfterClass
