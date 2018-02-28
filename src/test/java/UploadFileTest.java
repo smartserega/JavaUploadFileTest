@@ -1,21 +1,18 @@
 import org.junit.AfterClass;
-import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import static org.junit.Assert.*;
-
 import java.util.concurrent.TimeUnit;
 
 public class UploadFileTest {
 
     private static WebDriver driver;
 
-    @Test
-    public void setup() {
+    @BeforeClass
+    public static void  setup() {
         System.setProperty("webdriver.chrome.driver", "C:\\Users\\ПК\\IdeaProjects\\AutomatingTestingJavaMaven\\src\\recourses\\chromedriver.exe");
         driver = new ChromeDriver();
         driver.manage().window().maximize();
@@ -49,12 +46,11 @@ public class UploadFileTest {
 
                 WebElement check = driver.findElement(By.className("Uploads-name-2k"));
                 System.out.println("Пользователь загружает файл");
-
     }
-            @AfterClass
-            public static void tearDown() {
-                //driver.quit();
-                System.out.println("Тест завершён");
+    @AfterClass
+        public static void tearDown() {
+        //driver.quit();
+        System.out.println("Тест завершён");
     }
 }
 
