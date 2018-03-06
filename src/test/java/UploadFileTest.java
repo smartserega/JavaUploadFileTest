@@ -34,18 +34,22 @@ public class UploadFileTest {
         loginButton.click();
         System.out.println("Пользователь вошёл в почту");
 
-        WebElement writeButton = driver.findElement(By.className("_Button-label-3x"));
+        WebElement writeButton = driver.findElement(By.className("rui-Button-content"));
         writeButton.click();
         System.out.println("Пользователь начал писать новое письмо");
 
         //нужно выибрать селектор с тегом input
-        driver.findElement(By.className("Compose-fileInput-dl")).sendKeys("C:\\Users\\ПК\\IdeaProjects\\AutomatingTestingJavaMaven\\src\\recourses\\chromedriver.exe");
-
+        driver.findElement(By.className("Compose-fileInput-dl")).sendKeys("C:\\Program Files\\Java\\chromedriver.exe");
         System.out.println("Пользователь загружает файл");
+
+
+        assertTrue(driver.findElement(By.className("Uploads-name-2k")).getText().contains("chromedriver.exe"));
+        System.out.println("Тест пройден файл успешно загрузился");
+        }
     }
     @AfterClass
         public static void tearDown() {
-        //driver.quit();
+        driver.quit();
         System.out.println("Тест завершён");
     }
 }
