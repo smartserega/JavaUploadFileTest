@@ -1,3 +1,3 @@
 # JavaUploadFileTest
 
-- This simple test shows who to download local file using Java/Maven
+- This simple test shows how to download local file using Java/Maven
